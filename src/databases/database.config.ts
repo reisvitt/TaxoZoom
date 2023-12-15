@@ -24,7 +24,8 @@ export default <TypeOrmModuleAsyncOptions>{
       password: configService.get('DB_PASSWORD'),
       database: configService.get('DB_NAME'),
       entities: [Answer, Question, AnswerCorrect, User, UserAnswer],
-      synchronize: true,
+      synchronize: configService.get('NODE_ENV') === 'DEV',
+      ssl: true,
     };
   },
 };
