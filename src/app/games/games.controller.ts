@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   Controller,
   Post,
@@ -61,4 +62,10 @@ export class GameController {
   async myScore(@CurrentUserUuid() uuid: string): Promise<any> {
     return this.gameService.score(uuid);
   }
+
+  @Get('/itis/getKingdomNames')
+  async middleware(): Promise<any> {}
+
+  @Get('/itis/getHierarchyDownFromTSN')
+  async middleware1(): Promise<any> {}
 }
