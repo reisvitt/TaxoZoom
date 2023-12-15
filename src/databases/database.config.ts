@@ -26,6 +26,9 @@ export default <TypeOrmModuleAsyncOptions>{
       entities: [Answer, Question, AnswerCorrect, User, UserAnswer],
       synchronize: configService.get('NODE_ENV') === 'DEV',
       ssl: true,
+      dialectOptions: {
+        ssl: { require: true, rejectUnauthorized: false },
+      },
     };
   },
 };
